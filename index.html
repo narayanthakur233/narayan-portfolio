@@ -36,12 +36,14 @@
       <ul role="tablist" aria-label="Portfolio sections">
         <li><button class="nav-link is-active" data-tab="home" role="tab" aria-selected="true">
           <span class="nav-index">if0</span><span class="nav-label">home</span></button></li>
+        <li><button class="nav-link" data-tab="experience" role="tab" aria-selected="false">
+          <span class="nav-index">if1</span><span class="nav-label">experience</span></button></li>
         <li><button class="nav-link" data-tab="certification" role="tab" aria-selected="false">
-          <span class="nav-index">if1</span><span class="nav-label">certification</span></button></li>
+          <span class="nav-index">if2</span><span class="nav-label">certification</span></button></li>
         <li><button class="nav-link" data-tab="about" role="tab" aria-selected="false">
-          <span class="nav-index">if2</span><span class="nav-label">about</span></button></li>
+          <span class="nav-index">if3</span><span class="nav-label">about</span></button></li>
         <li><button class="nav-link" data-tab="connect" role="tab" aria-selected="false">
-          <span class="nav-index">if3</span><span class="nav-label">connect</span></button></li>
+          <span class="nav-index">if4</span><span class="nav-label">connect</span></button></li>
       </ul>
     </nav>
 
@@ -140,119 +142,106 @@
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="career-block">
-        <h2 class="block-title">show logging | uptime-history</h2>
-        <p class="section-sub" style="margin-bottom:18px;">Interface uptime record — click any role to open its session log.</p>
+    <!-- EXPERIENCE -------------------------------------------- -->
+    <section class="panel" id="experience" role="tabpanel">
+      <div class="term-bar"><span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span><span class="term-path">ntadmin@core-rtr01: ~$ show logging | uptime-history</span></div>
+      <h2 class="section-title">Experience log</h2>
+      <p class="section-sub">Interface uptime record — every role, still forwarding traffic today.</p>
 
-        <div class="job-rack">
-          <button class="job-row" type="button" data-modal="job-mosambee" data-path="ntadmin@core-rtr01: ~$ show job-history mosambee">
-            <img src="assets/router.png" class="job-icon" alt="" aria-hidden="true">
-            <span class="job-text"><strong>Mosambee | PineLabs</strong><span class="job-level">Level — Infra Network Engineer</span></span>
-            <span class="job-time"><span class="up-badge">UP</span> Nov 2025 — Present</span>
-            <span class="job-chevron">›</span>
-          </button>
+      <div class="log">
 
-          <button class="job-row" type="button" data-modal="job-eclerx" data-path="ntadmin@core-rtr01: ~$ show job-history eclerx">
-            <img src="assets/router.png" class="job-icon" alt="" aria-hidden="true">
-            <span class="job-text"><strong>eClerx | Zayo Communications</strong><span class="job-level">Level — IP/Ethernet Tier 2 Engineer</span></span>
-            <span class="job-time">Aug 2025 — Nov 2025</span>
-            <span class="job-chevron">›</span>
-          </button>
+        <article class="log-entry">
+          <div class="log-rail"><span class="log-node up"></span></div>
+          <div class="log-card">
+            <div class="log-head">
+              <div>
+                <h3>Infra Network Engineer</h3>
+                <p class="log-org">Mosambee | PineLabs</p>
+              </div>
+              <span class="log-time"><span class="up-badge">UP</span> Nov 2025 — Present</span>
+            </div>
+            <ul class="log-list">
+              <li>Monitor and maintain production infrastructure and DC environments using NMS tooling.</li>
+              <li>Design, implement and support secure network solutions including IPsec site-to-site and remote-access VPNs.</li>
+              <li>Manage 6 infrastructure environments hosted across data centers; configure enterprise firewalls (Fortinet 100F/200E/200F/201G, Palo Alto PA-440) and administer 600+ firewall policies and ACLs.</li>
+              <li>Provide L2 support for LAN/WAN environments — troubleshoot incidents, perform RCA with documented resolutions, and coordinate with L1/L3 teams for SLA-compliant closure.</li>
+              <li>Configure and manage STP, RSTP, PVST and EtherChannel for loop prevention and link aggregation.</li>
+              <li>Deploy and maintain VXLAN overlay networks, plus BGP and OSPF routing across WAN and DC environments.</li>
+              <li>Maintain topology diagrams, SOPs, MOPs, configuration backups and change management records; prepare performance and capacity-planning reports.</li>
+            </ul>
+            <div class="log-tags"><span>Fortinet</span><span>Palo Alto</span><span>IPsec VPN</span><span>VXLAN</span><span>BGP/OSPF</span></div>
+          </div>
+        </article>
 
-          <button class="job-row" type="button" data-modal="job-jio" data-path="ntadmin@core-rtr01: ~$ show job-history reliance-jio">
-            <img src="assets/router.png" class="job-icon" alt="" aria-hidden="true">
-            <span class="job-text"><strong>Reliance Jio Infocomm Limited</strong><span class="job-level">Level — Assistant Manager, NOC Network Engineer</span></span>
-            <span class="job-time">May 2022 — Aug 2025</span>
-            <span class="job-chevron">›</span>
-          </button>
+        <article class="log-entry">
+          <div class="log-rail"><span class="log-node"></span></div>
+          <div class="log-card">
+            <div class="log-head">
+              <div>
+                <h3>IP/Ethernet Tier 2 Engineer</h3>
+                <p class="log-org">eClerx — US client: Zayo Communications</p>
+              </div>
+              <span class="log-time">Aug 2025 — Nov 2025</span>
+            </div>
+            <ul class="log-list">
+              <li>Monitored and troubleshot IP/Ethernet circuits in a 24x7 telecom-grade NOC for enterprise customers across the US.</li>
+              <li>Performed advanced troubleshooting on MPLS, BGP, VLAN, STP and LAG-related incidents.</li>
+              <li>Configured and maintained multi-vendor devices including Cisco, Juniper, Nokia and Ciena.</li>
+              <li>Conducted RFC 2544 service-level testing and supported field engineers with OTDR fiber diagnostics.</li>
+              <li>Coordinated with carrier partners — Verizon, AT&amp;T, Lumen, Windstream — to resolve network issues.</li>
+              <li>Documented incidents, RCA and resolutions in Salesforce with clear customer-facing reporting.</li>
+            </ul>
+            <div class="log-tags"><span>MPLS</span><span>Ciena</span><span>Salesforce</span><span>RFC 2544</span><span>OTDR</span></div>
+          </div>
+        </article>
 
-          <button class="job-row" type="button" data-modal="job-randstad" data-path="ntadmin@core-rtr01: ~$ show job-history randstad">
-            <img src="assets/router.png" class="job-icon" alt="" aria-hidden="true">
-            <span class="job-text"><strong>Randstad | Nelco Network Products</strong><span class="job-level">Level — Technical Associate</span></span>
-            <span class="job-time">Nov 2021 — May 2022</span>
-            <span class="job-chevron">›</span>
-          </button>
-        </div>
+        <article class="log-entry">
+          <div class="log-rail"><span class="log-node"></span></div>
+          <div class="log-card">
+            <div class="log-head">
+              <div>
+                <h3>Assistant Manager — NOC Network Engineer</h3>
+                <p class="log-org">Reliance Jio Infocomm Limited</p>
+              </div>
+              <span class="log-time">May 2022 — Aug 2025</span>
+            </div>
+            <ul class="log-list">
+              <li>Configured and monitored 7360 ISAM OLT, Radisys RLT-3200C/RLT-1600C OLT, and Cisco ASR 903/9010 routers across the PAN-India network.</li>
+              <li>Specialized in alarm monitoring and live troubleshooting across GPON (Nokia) and Cisco ASR 9020/903/9010 platforms.</li>
+              <li>Applied deep working knowledge of TCP/IP, OSI layers and routing protocols — EIGRP, OSPF, BGP, RIP, VRRP, STP/RSTP.</li>
+              <li>Conducted network availability audits and resolved issues across the PAN-India footprint.</li>
+              <li>Handled enterprise customer escalations and coordinated vendor resolution.</li>
+              <li>Executed complex changes on network and security devices with zero-impact transitions.</li>
+              <li>Led firmware upgrades and FX4→FX8 chassis migration on Nokia OLT.</li>
+              <li>Configured Nokia GPON OLT ISAM 7330 and Radisys OLTs — link aggregation, card setup, ONT config, ENT VLAN, multicast, XML uploads, backup/restore.</li>
+            </ul>
+            <div class="log-tags"><span>GPON</span><span>Nokia OLT</span><span>Cisco ASR</span><span>VRRP</span><span>PAN-India NOC</span></div>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-rail"><span class="log-node"></span></div>
+          <div class="log-card">
+            <div class="log-head">
+              <div>
+                <h3>Technical Associate</h3>
+                <p class="log-org">Randstad Ltd — Client: Nelco Network Products Ltd</p>
+              </div>
+              <span class="log-time">Nov 2021 — May 2022</span>
+            </div>
+            <ul class="log-list">
+              <li>Maintained KU-band VSAT systems and installed VSAT antennas at remote OIL field sites (ONGC rigs and platforms).</li>
+              <li>Diagnosed RF technical faults and supported escalated field issues.</li>
+              <li>Configured satellite modems and routers — iDirect X1/X3/X5, iQ200, LinkWay S2, ACU.</li>
+              <li>Monitored VSAT sites through NMS software.</li>
+            </ul>
+            <div class="log-tags"><span>VSAT</span><span>iDirect</span><span>RF Diagnostics</span><span>Field Ops</span></div>
+          </div>
+        </article>
+
       </div>
-
-      <!-- hidden terminal content templates, cloned into the modal on click -->
-      <template id="job-mosambee">
-        <div class="log-head">
-          <div>
-            <h3>Infra Network Engineer</h3>
-            <p class="log-org">Mosambee | PineLabs</p>
-          </div>
-          <span class="log-time"><span class="up-badge">UP</span> Nov 2025 — Present</span>
-        </div>
-        <ul class="log-list">
-          <li>Monitor and maintain production infrastructure and DC environments using NMS tooling.</li>
-          <li>Design, implement and support secure network solutions including IPsec site-to-site and remote-access VPNs.</li>
-          <li>Manage 6 infrastructure environments hosted across data centers; configure enterprise firewalls (Fortinet 100F/200E/200F/201G, Palo Alto PA-440) and administer 600+ firewall policies and ACLs.</li>
-          <li>Provide L2 support for LAN/WAN environments — troubleshoot incidents, perform RCA with documented resolutions, and coordinate with L1/L3 teams for SLA-compliant closure.</li>
-          <li>Configure and manage STP, RSTP, PVST and EtherChannel for loop prevention and link aggregation.</li>
-          <li>Deploy and maintain VXLAN overlay networks, plus BGP and OSPF routing across WAN and DC environments.</li>
-          <li>Maintain topology diagrams, SOPs, MOPs, configuration backups and change management records; prepare performance and capacity-planning reports.</li>
-        </ul>
-        <div class="log-tags"><span>Fortinet</span><span>Palo Alto</span><span>IPsec VPN</span><span>VXLAN</span><span>BGP/OSPF</span></div>
-      </template>
-
-      <template id="job-eclerx">
-        <div class="log-head">
-          <div>
-            <h3>IP/Ethernet Tier 2 Engineer</h3>
-            <p class="log-org">eClerx — US client: Zayo Communications</p>
-          </div>
-          <span class="log-time">Aug 2025 — Nov 2025</span>
-        </div>
-        <ul class="log-list">
-          <li>Monitored and troubleshot IP/Ethernet circuits in a 24x7 telecom-grade NOC for enterprise customers across the US.</li>
-          <li>Performed advanced troubleshooting on MPLS, BGP, VLAN, STP and LAG-related incidents.</li>
-          <li>Configured and maintained multi-vendor devices including Cisco, Juniper, Nokia and Ciena.</li>
-          <li>Conducted RFC 2544 service-level testing and supported field engineers with OTDR fiber diagnostics.</li>
-          <li>Coordinated with carrier partners — Verizon, AT&amp;T, Lumen, Windstream — to resolve network issues.</li>
-          <li>Documented incidents, RCA and resolutions in Salesforce with clear customer-facing reporting.</li>
-        </ul>
-        <div class="log-tags"><span>MPLS</span><span>Ciena</span><span>Salesforce</span><span>RFC 2544</span><span>OTDR</span></div>
-      </template>
-
-      <template id="job-jio">
-        <div class="log-head">
-          <div>
-            <h3>Assistant Manager — NOC Network Engineer</h3>
-            <p class="log-org">Reliance Jio Infocomm Limited</p>
-          </div>
-          <span class="log-time">May 2022 — Aug 2025</span>
-        </div>
-        <ul class="log-list">
-          <li>Configured and monitored 7360 ISAM OLT, Radisys RLT-3200C/RLT-1600C OLT, and Cisco ASR 903/9010 routers across the PAN-India network.</li>
-          <li>Specialized in alarm monitoring and live troubleshooting across GPON (Nokia) and Cisco ASR 9020/903/9010 platforms.</li>
-          <li>Applied deep working knowledge of TCP/IP, OSI layers and routing protocols — EIGRP, OSPF, BGP, RIP, VRRP, STP/RSTP.</li>
-          <li>Conducted network availability audits and resolved issues across the PAN-India footprint.</li>
-          <li>Handled enterprise customer escalations and coordinated vendor resolution.</li>
-          <li>Executed complex changes on network and security devices with zero-impact transitions.</li>
-          <li>Led firmware upgrades and FX4→FX8 chassis migration on Nokia OLT.</li>
-          <li>Configured Nokia GPON OLT ISAM 7330 and Radisys OLTs — link aggregation, card setup, ONT config, ENT VLAN, multicast, XML uploads, backup/restore.</li>
-        </ul>
-        <div class="log-tags"><span>GPON</span><span>Nokia OLT</span><span>Cisco ASR</span><span>VRRP</span><span>PAN-India NOC</span></div>
-      </template>
-
-      <template id="job-randstad">
-        <div class="log-head">
-          <div>
-            <h3>Technical Associate</h3>
-            <p class="log-org">Randstad Ltd — Client: Nelco Network Products Ltd</p>
-          </div>
-          <span class="log-time">Nov 2021 — May 2022</span>
-        </div>
-        <ul class="log-list">
-          <li>Maintained KU-band VSAT systems and installed VSAT antennas at remote OIL field sites (ONGC rigs and platforms).</li>
-          <li>Diagnosed RF technical faults and supported escalated field issues.</li>
-          <li>Configured satellite modems and routers — iDirect X1/X3/X5, iQ200, LinkWay S2, ACU.</li>
-          <li>Monitored VSAT sites through NMS software.</li>
-        </ul>
-        <div class="log-tags"><span>VSAT</span><span>iDirect</span><span>RF Diagnostics</span><span>Field Ops</span></div>
-      </template>
     </section>
 
     <!-- CERTIFICATION ------------------------------------------ -->
@@ -405,18 +394,6 @@
     </section>
 
   </main>
-
-  <!-- Job history modal — styled as a terminal window, populated via JS -->
-  <div class="modal-overlay" id="jobModalOverlay" aria-hidden="true">
-    <div class="modal-terminal" role="dialog" aria-modal="true" aria-label="Role details">
-      <div class="term-bar modal-term-bar">
-        <span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span>
-        <span class="term-path" id="jobModalPath">ntadmin@core-rtr01: ~$</span>
-        <button class="modal-close" id="jobModalClose" aria-label="Close">✕</button>
-      </div>
-      <div class="modal-body" id="jobModalBody"></div>
-    </div>
-  </div>
 </div>
 
 <footer class="site-footer">
