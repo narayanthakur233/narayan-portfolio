@@ -331,6 +331,106 @@ strong{ color: var(--text); font-weight: 600; }
 }
 .chip-accent{ border-color: var(--accent-dim); color: var(--accent); background: rgba(79,209,197,0.06); }
 
+/* ============ HOME · career log rows ============ */
+.career-block{ margin-top: 40px; }
+
+.job-rack{ display: flex; flex-direction: column; gap: 10px; }
+
+.job-row{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  color: var(--text);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+.job-row:hover{
+  border-color: var(--accent-dim);
+  border-left-color: var(--accent);
+  background: rgba(79,209,197,0.05);
+  transform: translateX(3px);
+}
+.job-icon{
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(79,209,197,0.3));
+}
+.job-text{ display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+.job-text strong{ font-size: 14px; }
+.job-level{ font-size: 12px; color: var(--text-faint); }
+.job-time{
+  font-size: 11.5px;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.job-chevron{ color: var(--text-faint); font-size: 17px; transition: transform 0.15s ease, color 0.15s ease; }
+.job-row:hover .job-chevron{ color: var(--accent); transform: translateX(2px); }
+
+/* ============ job history modal ============ */
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(5,8,12,0.72);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.modal-overlay.is-open{ opacity: 1; pointer-events: auto; }
+
+.modal-terminal{
+  width: min(660px, 100%);
+  max-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+  transform: translateY(14px) scale(0.98);
+  transition: transform 0.22s ease;
+}
+.modal-overlay.is-open .modal-terminal{ transform: translateY(0) scale(1); }
+
+.modal-term-bar{ border-radius: 0; flex-shrink: 0; }
+.modal-close{
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+.modal-close:hover{ color: var(--text); }
+
+.modal-body{ padding: 24px 28px; overflow-y: auto; }
+.modal-body .log-head{ margin-bottom: 16px; }
+.modal-body .log-list{ margin-bottom: 18px; }
+
+@media (max-width: 640px){
+  .job-row{ flex-wrap: wrap; padding: 14px 16px; }
+  .job-time{ order: 3; width: 100%; padding-left: 48px; }
+  .modal-body{ padding: 20px; }
+}
+
 /* ============ EXPERIENCE ============ */
 .section-title{ font-size: 26px; margin: 24px 0 6px; }
 .section-sub{ font-size: 13.5px; margin-bottom: 32px; }
@@ -428,7 +528,7 @@ strong{ color: var(--text); font-weight: 600; }
 /* ============ CERTIFICATION ============ */
 .cert-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 18px;
   margin-bottom: 36px;
 }
@@ -458,6 +558,15 @@ strong{ color: var(--text); font-weight: 600; }
 .cert-state{ font-size: 10px; color: var(--green); letter-spacing: 0.04em; }
 .cert-card h3{ font-size: 15px; line-height: 1.4; margin-bottom: 8px; }
 .cert-issuer{ font-size: 12.5px; color: var(--text-faint); margin: 0; }
+.cert-meta{ font-size: 11.5px; color: var(--text-faint); margin: 8px 0 0; }
+.cert-link{
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-dim);
+}
+.cert-link:hover{ color: #6EE0D5; border-color: var(--accent); }
 
 .edu-block{ margin-top: 8px; }
 .edu-card{

@@ -48,6 +48,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== job history modal (terminal popup) =====
+  const jobRows      = document.querySelectorAll('.job-row');
+  const modalOverlay = document.getElementById('jobModalOverlay');
+  const modalBody     = document.getElementById('jobModalBody');
+  const modalPath     = document.getElementById('jobModalPath');
+  const modalClose    = document.getElementById('jobModalClose');
+
+  function openJobModal(row) {
+    const tpl = document.getElementById(row.dataset.modal);
+    if (!tpl) return;
+    modalBody.innerHTML = '';
+    modalBody.appendChild(tpl.content.cloneNode(true));
+    modalPath.textContent = row.dataset.path || 'ntadmin@core-rtr01: ~$';
+    modalOverlay.classList.add('is-open');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeJobModal() {
+    modalOverlay.classList.remove('is-open');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  jobRows.forEach(row => {
+    row.addEventListener('click', () => openJobModal(row));
+  });
+
+  if (modalClose) modalClose.addEventListener('click', closeJobModal);
+
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeJobModal();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) {
+      closeJobModal();
+    }
+  });
+
   // deep-link support: narayanthakur.in/#experience opens straight to that tab
   const initial = window.location.hash.replace('#', '');
   const validTabs = Array.from(navLinks).map(l => l.dataset.tab);
