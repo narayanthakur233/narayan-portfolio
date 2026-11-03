@@ -1,0 +1,13 @@
+# Publishes the site with GitLab Pages on every push to the default branch.
+pages:
+  stage: deploy
+  image: busybox:latest
+  script:
+    - mkdir -p public
+    - cp index.html public/
+    - cp -r assets public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
