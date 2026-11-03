@@ -1,29 +1,17 @@
 # narayan-portfolio
 
-Personal CV / portfolio site for Narayan Thakur — Network & Security Engineer.
+Personal CV / portfolio site for Narayan Thakur, Network and Security Engineer.
+Plain HTML, CSS and JavaScript in a single `index.html`. No build step.
 
-Plain HTML/CSS/JS, no build step, deploys directly on GitHub Pages with the
-custom domain **narayanthakur.in**.
+## Before you push
+- Put your resume PDF at `assets/Narayan_Thakur_Resume.pdf` (the Download Resume buttons point to it).
+- Check the email, phone numbers and LinkedIn URL in `index.html`.
 
-## Structure
-```
-index.html      → all page content (home, experience, certification, about, connect)
-css/style.css    → dark "console rack" theme
-js/script.js     → tab switching, mobile nav, deep-linking
-CNAME            → tells GitHub Pages to serve this repo on narayanthakur.in
-```
+## Deploy on GitLab Pages
+1. Push this repo to GitLab (default branch).
+2. The pipeline in `.gitlab-ci.yml` publishes the site automatically.
+3. Find the URL under Deploy > Pages.
+4. For narayanthakur.in: Deploy > Pages > New Domain, add the domain, then create the DNS records GitLab shows.
 
 ## Local preview
-Just open `index.html` in a browser — no server or build tools required.
-
-## Before you deploy
-- Update the LinkedIn URL: search `index.html` for `https://www.linkedin.com/`
-  (two spots — hero button and Connect tab) and replace with your real
-  profile URL, e.g. `https://www.linkedin.com/in/your-handle`.
-- Double-check the email and phone numbers in the Connect tab.
-
-## Deploy — see the step-by-step guide provided alongside this file for:
-1. Pushing this code to GitHub
-2. Enabling GitHub Pages
-3. Pointing narayanthakur.in at GitHub Pages via DNS
-4. Verifying HTTPS
+Open `index.html` in a browser.
